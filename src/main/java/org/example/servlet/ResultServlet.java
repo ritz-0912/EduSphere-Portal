@@ -26,7 +26,7 @@ public class ResultServlet extends HttpServlet {
 
         String username = user.getUsername();
 
-        // ✅ DEBUG - IntelliJ console mein dekho
+       
         System.out.println("=== DEBUG ===");
         System.out.println("Session username: " + username);
 
