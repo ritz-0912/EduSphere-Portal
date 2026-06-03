@@ -1,12 +1,11 @@
 <%
-    // 1. Session and Security Check
+
     if (session.getAttribute("user") == null || !"ADMIN".equals(session.getAttribute("role"))) {
         response.sendRedirect("login.jsp");
         return;
     }
 
-    // 2. Auto-Redirect Logic: Agar direct page open hua hai bina servlet ke data ke,
-    // toh automatic data sync karne ke liye ise StudentServlet par bhej do.
+
     if (request.getAttribute("students") == null) {
         request.getRequestDispatcher("StudentServlet").forward(request, response);
         return;
