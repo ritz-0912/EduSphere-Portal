@@ -24,7 +24,8 @@
         th { background-color: #34495e; color: white; }
         .summary-row { font-weight: bold; background-color: #f8f9fa; }
         .grade-badge { padding: 5px 12px; border-radius: 20px; font-weight: bold; font-size: 14px; background: #2ecc71; color: white; display: inline-block; }
-        .action-btn { background: #3498db; color: white; padding: 12px 24px; border: none; border-radius: 4px; text-decoration: none; font-weight: bold; display: inline-block; margin-top: 20px; text-align: center; cursor: pointer;}
+        .action-btn { background: #3498db; color: white; padding: 12px 24px; border: none; border-radius: 4px; text-decoration: none; font-weight: bold; display: inline-block; margin-top: 20px; text-align: center; cursor: pointer; width: 100%; }
+        form { width: 100%; }
     </style>
 </head>
 <body>
@@ -58,7 +59,6 @@
 
                     if (results != null && !results.isEmpty()) {
                         for (String[] row : results) {
-                            // FIXED: Explicit array index for marks
                             int marks = Integer.parseInt(row[1]);
                             totalMarks += marks;
                             subjectCount++;
@@ -106,7 +106,9 @@
             </tbody>
         </table>
 
-        <a href="ResultServlet" class="action-btn">🔄 Generate & Pull Report Card</a>
+        <form action="ResultServlet" method="GET">
+            <button type="submit" class="action-btn">🔄 Generate & Pull Report Card</button>
+        </form>
     </div>
 
 </body>

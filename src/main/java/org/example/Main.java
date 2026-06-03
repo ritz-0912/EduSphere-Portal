@@ -8,7 +8,7 @@ public class Main {
         UserDAO userDAO = new UserDAO();
 
         // Humne Workbench mein 'admin' aur 'admin123' dala tha, usko test karte hain
-        User loggedInUser = userDAO.loginUser("admin", "admin123");
+        User loggedInUser = userDAO.loginUser("admin", "admin123", "ADMIN");
 
         if (loggedInUser != null) {
             System.out.println("✅ Login Test Passed!");

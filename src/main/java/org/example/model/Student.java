@@ -6,7 +6,10 @@ public class Student {
     private String rollNo;
     private String branch;
 
-    // Constructor (Jo database se data lekar object banayega)
+    // ✅ No-arg constructor (needed when setting fields one by one)
+    public Student() {}
+
+    // Parameterized constructor
     public Student(int studentId, String name, String rollNo, String branch) {
         this.studentId = studentId;
         this.name = name;
@@ -14,7 +17,6 @@ public class Student {
         this.branch = branch;
     }
 
-    // Getters (Jo Servlets aur JSP pages ko data read karne denge)
     public int getStudentId() { return studentId; }
     public void setStudentId(int studentId) { this.studentId = studentId; }
 
