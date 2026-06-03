@@ -9,7 +9,6 @@ public class DBConnection {
     private static final String USER = "root";
     private static final String PASSWORD = "1234";
 
-    // ✅ Har baar fresh connection - no singleton, no closed connection problem
     public static Connection getConnection() {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
