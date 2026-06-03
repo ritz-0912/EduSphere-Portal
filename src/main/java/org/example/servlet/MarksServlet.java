@@ -18,19 +18,18 @@ public class MarksServlet extends HttpServlet {
             throws ServletException, IOException {
 
         try {
-            // 1. Frontend form se input values nikalna
+        
             int studentId = Integer.parseInt(request.getParameter("studentId"));
             String subjectName = request.getParameter("subjectName");
             int marks = Integer.parseInt(request.getParameter("marks"));
 
-            // 2. StudentDAO ki method call karke data database mein save karna
+           
             studentDAO.addMarks(studentId, subjectName, marks);
 
         } catch (NumberFormatException e) {
             e.printStackTrace();
         }
 
-        // 3. Marks save hone ke baad wapas admin dashboard ko reload karna data refresh ke sath
         response.sendRedirect("StudentServlet");
     }
 }
